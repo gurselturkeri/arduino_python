@@ -1,0 +1,12 @@
+arduino = serial.Serial('/dev/ttyACM1', 9600, timeout=1) # arduinoyu pythona bağladık seri portumuza göre
+
+def write_read(x):                     # arduinodan alacağımız bilgiler için fonksiyon oluşturduk
+    arduino.write(bytes(x, 'utf-8'))
+    time.sleep(0.05)                  # delay ile aynı işlem
+    data = arduino.readline()         # arduinodaki tüm satırları okuyor
+    return data                       # fonksiyonu döndürüyor her çalışma bittiğinde tekrar başlayacak
+    
+    
+if class_name == "sola_donulmez":     # eğer kamera sola_donulmez levhasını görürse "S" char'ını arduinoya gönderecek        
+            value = write_read("S")
+            time.sleep(1) 
